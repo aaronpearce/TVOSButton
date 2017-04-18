@@ -190,13 +190,16 @@
 				TargetAttributes = {
 					B24AE6B51C6D53F70099207D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 					};
 					B24AE6C61C6D53F70099207D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = B24AE6B51C6D53F70099207D;
 					};
 					B24AE6D11C6D53F70099207D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = B24AE6B51C6D53F70099207D;
 					};
 				};
@@ -390,6 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -402,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -413,6 +418,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVOSButtonExample.app/TVOSButtonExample";
 			};
 			name = Debug;
@@ -425,6 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVOSButtonExample.app/TVOSButtonExample";
 			};
 			name = Release;
@@ -436,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TVOSButtonExample;
 				USES_XCTRUNNER = YES;
 			};
@@ -448,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TVOSButtonExample;
 				USES_XCTRUNNER = YES;
 			};
@@ -472,6 +481,7 @@
 				B24AE6DD1C6D53F70099207D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B24AE6DE1C6D53F70099207D /* Build configuration list for PBXNativeTarget "TVOSButtonExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +490,7 @@
 				B24AE6E01C6D53F70099207D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B24AE6E11C6D53F70099207D /* Build configuration list for PBXNativeTarget "TVOSButtonExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +499,7 @@
 				B24AE6E31C6D53F70099207D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

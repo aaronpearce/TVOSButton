@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ALKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char ALKitVersionString[];
+FOUNDATION_EXPORT double Pods_TVOSButtonTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_TVOSButtonTestsVersionString[];
 

@@ -2,9 +2,20 @@ PODS:
   - ALKit (0.4)
 
 DEPENDENCIES:
-  - ALKit
+  - ALKit (from `https://github.com/mperovic/ALKit.git`)
+
+EXTERNAL SOURCES:
+  ALKit:
+    :git: https://github.com/mperovic/ALKit.git
+
+CHECKOUT OPTIONS:
+  ALKit:
+    :commit: 9b96031408629367948b2fc05b75f16bee01edcd
+    :git: https://github.com/mperovic/ALKit.git
 
 SPEC CHECKSUMS:
   ALKit: 8e9bc8c4740c959431a9105d2050fa7cc90e48d8
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 1975ca11f3b0e7c80b554e5bb0b27396ca4a7893
+
+COCOAPODS: 1.2.1

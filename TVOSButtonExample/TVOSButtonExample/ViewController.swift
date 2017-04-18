@@ -22,12 +22,12 @@ class PosterButton: TVOSButton {
   var posterImageURL: String? {
     didSet {
       if let posterImageURL = posterImageURL {
-        NSURLSession.sharedSession().dataTaskWithURL(
-          NSURL(string: posterImageURL)!,
+        URLSession.shared.dataTask(
+          with: URL(string: posterImageURL)!,
           completionHandler: { data, response, error in
             if error == nil {
-              if let data = data, image = UIImage(data: data) {
-                dispatch_async(dispatch_get_main_queue(), {
+              if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async(execute: {
                   self.posterImage = image
                 })
               }
@@ -37,7 +37,7 @@ class PosterButton: TVOSButton {
     }
   }
 
-  override func tvosButtonStyleForState(tvosButtonState: TVOSButtonState) -> TVOSButtonStyle {
+  override func tvosButtonStyleForState(_ tvosButtonState: TVOSButtonState) -> TVOSButtonStyle {
     switch tvosButtonState {
     case .Focused:
       return TVOSButtonStyle(
@@ -69,7 +69,7 @@ class IconButton: TVOSButton {
     }
   }
 
-  override func tvosButtonStyleForState(tvosButtonState: TVOSButtonState) -> TVOSButtonStyle {
+  override func tvosButtonStyleForState(_ tvosButtonState: TVOSButtonState) -> TVOSButtonStyle {
 
     // custom content
     let icon = UIImageView(frame: CGRect(x: 20, y: 0, width: 40, height: 40))
@@ -131,8 +131,8 @@ class ViewController: UIViewController {
   }
 
   func toggleButtonDidToggledActionHandler(
-    currentState: TVOSToggleButtonState,
-    updateNewState: (newState: TVOSToggleButtonState) -> Void) {
+    _ currentState: TVOSToggleButtonState,
+    updateNewState: (_ newState: TVOSToggleButtonState) -> Void) {
       switch currentState {
       case .Waiting:
         toggleButton.textLabelText = "..."
@@ -170,21 +170,17 @@ class ViewController: UIViewController {
 
   // Example request methods for simulate waiting for network
 
-  func addSomethingToServer(success: () -> Void, failure: () -> Void) {
+  func addSomethingToServer(_ success: () -> Void, failure: () -> Void) {
     requestSomething(success, failure: failure)
   }
 
-  func removeSomething(success: () -> Void, failure: () -> Void) {
+  func removeSomething(_ success: () -> Void, failure: () -> Void) {
     requestSomething(success, failure: failure)
   }
 
-  func requestSomething(success: () -> Void, failure: () -> Void) {
-    dispatch_after(
-      dispatch_time(
-        DISPATCH_TIME_NOW,
-        Int64(0.5 * Double(NSEC_PER_SEC))
-      ),
-      dispatch_get_main_queue(), success)
+  func requestSomething(_ success: () -> Void, failure: () -> Void) {
+    DispatchQueue.main.asyncAfter(
+      deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: success)
   }
 
   // Event handler

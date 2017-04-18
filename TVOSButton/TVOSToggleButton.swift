@@ -8,55 +8,55 @@
 
 import UIKit
 
-public typealias TVOSToggleButtonDidToggledAction = (currentState: TVOSToggleButtonState, newState: (newState: TVOSToggleButtonState) -> Void) -> Void
+public typealias TVOSToggleButtonDidToggledAction = (_ currentState: TVOSToggleButtonState, _ newState: (_ newState: TVOSToggleButtonState) -> Void) -> Void
 
 public enum TVOSToggleButtonState {
-  case Waiting
-  case On
-  case Off
+	case waiting
+	case on
+	case fff
 }
 
 public class TVOSToggleButton: TVOSButton {
 
-  // MARK; Properties
+	// MARK; Properties
 
-  public var toggleState: TVOSToggleButtonState = .Waiting
-  public var didToggledAction: TVOSToggleButtonDidToggledAction? {
-    didSet {
-      didToggled(self)
-    }
-  }
+	public var toggleState: TVOSToggleButtonState = .Waiting
+	public var didToggledAction: TVOSToggleButtonDidToggledAction? {
+		didSet {
+			didToggled(sender: self)
+		}
+	}
 
-  // MARK: Init
+	// MARK: Init
 
-  public init(initialState: TVOSToggleButtonState, didToggledAction: TVOSToggleButtonDidToggledAction?) {
-    super.init(frame: CGRect.zero)
-    self.toggleState = initialState
-    self.didToggledAction = didToggledAction
-    commonInit()
-  }
+	public init(initialState: TVOSToggleButtonState, didToggledAction: TVOSToggleButtonDidToggledAction?) {
+		super.init(frame: CGRect.zero)
+		self.toggleState = initialState
+		self.didToggledAction = didToggledAction
+		commonInit()
+	}
 
-  public override init(frame: CGRect) {
-    super.init(frame: frame)
-    commonInit()
-  }
+	public override init(frame: CGRect) {
+		super.init(frame: frame)
+		commonInit()
+	}
 
-  public required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    commonInit()
-  }
+	public required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		commonInit()
+	}
 
-  public func commonInit() {
-    addTarget(self, action: "didToggled:", forControlEvents: .PrimaryActionTriggered)
-  }
+	public func commonInit() {
+		addTarget(self, action: "didToggled:", for: .primaryActionTriggered)
+	}
 
-  // MARK: Toggle
+	// MARK: Toggle
 
-  public func didToggled(sender: TVOSToggleButton) {
-    didToggledAction?(
-      currentState: toggleState,
-      newState: { state in
-        self.toggleState = state
-      })
-  }
+	public func didToggled(sender: TVOSToggleButton) {
+		didToggledAction?(
+			toggleState,
+			{ state in
+				self.toggleState = state
+		})
+	}
 }
