@@ -20,7 +20,7 @@ public class TVOSToggleButton: TVOSButton {
 
 	// MARK; Properties
 
-	public var toggleState: TVOSToggleButtonState = .Waiting
+	public var toggleState: TVOSToggleButtonState = .waiting
 	public var didToggledAction: TVOSToggleButtonDidToggledAction? {
 		didSet {
 			didToggled(sender: self)

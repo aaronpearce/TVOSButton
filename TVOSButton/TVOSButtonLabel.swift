@@ -25,7 +25,7 @@ public enum TVOSButtonLabel {
 				shadow: shadow)
 
 		case .defaultText(let color):
-			return TVOSButtonLabel.Custom(
+			return TVOSButtonLabel.custom(
 				color: color,
 				font: nil,
 				alignment: nil,
@@ -33,11 +33,11 @@ public enum TVOSButtonLabel {
 				.getStyle()
 
 		case .defaultTitle(let color):
-			return TVOSButtonLabel.Custom(
+			return TVOSButtonLabel.custom(
 				color: color,
 				font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1),
 				alignment: nil,
-				shadow: TVOSButtonShadow.TitleLabel)
+				shadow: TVOSButtonShadow.titleLabel)
 				.getStyle()
 		}
 	}

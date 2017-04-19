@@ -10,7 +10,7 @@ import UIKit
 
 public enum TVOSButtonShadow {
 	case custom(color: UIColor?, offset: CGSize?, opacity: Float?, radius: CGFloat?, path: UIBezierPath?)
-	case default(offsetX: CGFloat, offsetY: CGFloat, radius: CGFloat)
+	case normal(offsetX: CGFloat, offsetY: CGFloat, radius: CGFloat)
 	case focused
 	case highlighted
 	case titleLabel
@@ -25,7 +25,7 @@ public enum TVOSButtonShadow {
 				radius: radius,
 				path: path)
 
-		case .default(let x, let y, let r):
+		case .normal(let x, let y, let r):
 			return TVOSButtonShadowStyle(
 				color: UIColor.black,
 				offset: CGSize(width: x, height: y),
@@ -34,21 +34,21 @@ public enum TVOSButtonShadow {
 				path: nil)
 
 		case .focused:
-			return TVOSButtonShadow.Default(
+			return TVOSButtonShadow.normal(
 				offsetX: 0,
 				offsetY: 25,
 				radius: 10)
 				.getStyle(withHeight: height)
 
 		case .highlighted:
-			return TVOSButtonShadow.Default(
+			return TVOSButtonShadow.normal(
 				offsetX: 0,
 				offsetY: 5,
 				radius: 10)
 				.getStyle(withHeight: height)
 
 		case .titleLabel:
-			return TVOSButtonShadow.Default(
+			return TVOSButtonShadow.normal(
 				offsetX: 0,
 				offsetY: 2,
 				radius: 3)

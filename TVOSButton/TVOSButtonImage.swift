@@ -27,7 +27,7 @@ public enum TVOSButtonImage {
 				adjustsImageWhenAncestorFocused: adjustsImageWhenAncestorFocused)
 
 		case .fill(let adjustsImageWhenAncestorFocused):
-			return TVOSButtonImage.Custom(
+			return TVOSButtonImage.custom(
 				contentMode: .scaleAspectFill,
 				size: nil,
 				offsets: nil,
@@ -37,7 +37,7 @@ public enum TVOSButtonImage {
 				.getStyle()
 
 		case .fit:
-			return TVOSButtonImage.Custom(
+			return TVOSButtonImage.custom(
 				contentMode: .scaleAspectFit,
 				size: nil,
 				offsets: nil,
